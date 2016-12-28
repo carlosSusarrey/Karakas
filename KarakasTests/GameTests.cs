@@ -27,6 +27,16 @@ namespace KarakasTests
         }
 
         [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void A_multiplayer_game_cant_start_with_less_than_three_players(int numberOfPlayers)
+        {
+            Action createInvalidGame = () => GameFactory.CreateMultiplayerGame(numberOfPlayers);
+            createInvalidGame.ShouldThrow<InvalidMultiplayerGameCreationException>();
+
+        }
+
+        [Theory]
         [InlineData(3)]
         [InlineData(4)]
         [InlineData(5)]

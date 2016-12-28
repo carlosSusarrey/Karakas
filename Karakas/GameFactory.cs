@@ -11,6 +11,10 @@ namespace Karakas
 
         public static Game CreateMultiplayerGame(int numberOfPlayers)
         {
+            if (numberOfPlayers < 3)
+            {
+                throw new InvalidMultiplayerGameCreationException();
+            }
             return new Game(numberOfPlayers);
         }
 
