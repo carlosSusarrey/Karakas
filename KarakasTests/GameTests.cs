@@ -26,6 +26,16 @@ namespace KarakasTests
             game.Players.Should().BeGreaterThan(2);
         }
 
+        [Theory]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        public void A_multiplayer_game_should_always_start_with_more_than_two_players(int numberOfPlayers)
+        {
+            Game game = GameFactory.CreateMultiplayerGame(numberOfPlayers);
+            game.Players.Should().BeGreaterThan(2);
+        }
+
         [Fact]
         public void A_Player_can_have_no_opponents()
         {

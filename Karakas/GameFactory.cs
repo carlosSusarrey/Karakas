@@ -1,4 +1,6 @@
-﻿namespace Karakas
+﻿using System;
+
+namespace Karakas
 {
     public class GameFactory
     {
@@ -7,9 +9,14 @@
             return new Game(2);
         }
 
+        public static Game CreateMultiplayerGame(int numberOfPlayers)
+        {
+            return new Game(numberOfPlayers);
+        }
+
         public static Game CreateMultiplayerGame()
         {
-            return new Game(3);
+            return CreateMultiplayerGame(3);
         }
     }
 }
