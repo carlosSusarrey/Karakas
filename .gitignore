@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/Karakas/packages
+/Karakas/Karakas.v3.ncrunchsolution.user
+/Karakas/Karakas.v3.ncrunchsolution
+/Karakas/_NCrunch_Karakas
+/Karakas/obj/Debug
+/Karakas/.vs/Karakas/v14
+/KarakasTests/obj/Debug
+*.ncrunchproject
