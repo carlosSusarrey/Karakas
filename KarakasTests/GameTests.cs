@@ -30,10 +30,10 @@ namespace KarakasTests
         [InlineData(3)]
         [InlineData(4)]
         [InlineData(5)]
-        public void A_multiplayer_game_should_always_start_with_more_than_two_players(int numberOfPlayers)
+        public void A_multiplayer_game_should_always_have_multiple_players(int numberOfPlayers)
         {
             Game game = GameFactory.CreateMultiplayerGame(numberOfPlayers);
-            game.Players.Should().BeGreaterThan(2);
+            game.Players.Should().Be(numberOfPlayers);
         }
 
         [Fact]
