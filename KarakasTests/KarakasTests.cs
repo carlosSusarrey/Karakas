@@ -17,5 +17,14 @@ namespace KarakasTests
             var player = new Player();
             player.Opponents.Should().BeEmpty();
         }
+
+        [Fact]
+        public void A_Player_can_have_one_Opponent()
+        {
+            var opponent = new Player();
+            var player = new Player(opponent);
+            player.Opponents.Count.Should().Be(1);
+        }
+
     }
 }
