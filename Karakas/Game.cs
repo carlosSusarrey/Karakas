@@ -1,12 +1,20 @@
-﻿namespace Karakas
+﻿using System.Collections.Generic;
+
+namespace Karakas
 {
     public class Game
     {
-        internal Game(int players)
+        internal Game(int playerCount)
         {
-            this.Players = players;
+            this.PlayerCount = playerCount;
+            Teams = new List<Team>();
+            for (var i = 0; i < playerCount; i++)
+            {
+                Teams.Add(new Team());
+            }   
         }
 
-        public int Players { get; }
+        public int PlayerCount { get; }
+        public ICollection<Team> Teams { get; }
     }
 }

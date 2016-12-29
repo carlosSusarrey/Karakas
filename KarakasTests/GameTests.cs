@@ -16,14 +16,14 @@ namespace KarakasTests
         public void A_two_player_game_is_one_that_has_only_two_players()
         {
             var game = GameFactory.CreateTwoPlayerGame();
-            game.Players.Should().Be(2);
+            game.PlayerCount.Should().Be(2);
         }
 
         [Fact]
         public void A_multiplayer_game_is_one_that_starts_with_more_than_two_players()
         {
             var game = GameFactory.CreateMultiplayerGame();
-            game.Players.Should().BeGreaterThan(2);
+            game.PlayerCount.Should().BeGreaterThan(2);
         }
 
         [Theory]
@@ -43,7 +43,16 @@ namespace KarakasTests
         public void A_multiplayer_game_should_always_start_with_multiple_players(int numberOfPlayers)
         {
             var game = GameFactory.CreateMultiplayerGame(numberOfPlayers);
-            game.Players.Should().Be(numberOfPlayers);
+            game.PlayerCount.Should().Be(numberOfPlayers);
         }
+
+        [Fact]
+        public void In_a_two_player_game_there_are_two_teams()
+        {
+            var game = GameFactory.CreateTwoPlayerGame();
+            game.Teams.Count.Should().Be(2);
+        }
+
+
     }
 }
