@@ -61,7 +61,7 @@ namespace KarakasTests
         }
 
         [Fact]
-        public void In_a_multiplayer_game_there_can_be_less_teams_than_there_are_players()
+        public void In_a_multiplayer_game_there_can_be_fewer_teams_than_there_are_players()
         {
             var game = GameFactory.CreateMultiplayerGame(4, 2);
             game.Teams.Count.Should().Be(2);
