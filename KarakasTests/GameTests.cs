@@ -66,5 +66,12 @@ namespace KarakasTests
             var game = GameFactory.CreateMultiplayerGame(4, 2);
             game.Teams.Count.Should().Be(2);
         }
+
+        [Fact]
+        public void In_a_multiplayer_game_there_cant_be_less_players_than_there_are_teams()
+        {
+            Action createInvalidGame = () => GameFactory.CreateMultiplayerGame(3, 5);
+            createInvalidGame.ShouldThrow<InvalidMultiplayerGameCreationException>();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace Karakas
 
         public static Game CreateMultiplayerGame(int numberOfPlayers, int numberOfTeams)
         {
-            if (numberOfPlayers < 3)
+            if (numberOfPlayers < 3 || numberOfPlayers < numberOfTeams)
             {
                 throw new InvalidMultiplayerGameCreationException();
             }
