@@ -4,11 +4,11 @@ namespace Karakas
 {
     public class Game
     {
-        internal Game(int playerCount)
+        internal Game(int playerCount, int numberOfTeams)
         {
             this.PlayerCount = playerCount;
             Teams = new List<Team>();
-            for (var i = 0; i < playerCount; i++)
+            for (var i = 0; i < numberOfTeams; i++)
             {
                 Teams.Add(new Team());
             }   
