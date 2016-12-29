@@ -68,7 +68,7 @@ namespace KarakasTests
         }
 
         [Fact]
-        public void In_a_multiplayer_game_there_cant_be_less_players_than_there_are_teams()
+        public void In_a_multiplayer_game_there_cant_be_fewer_players_than_there_are_teams()
         {
             Action createInvalidGame = () => GameFactory.CreateMultiplayerGame(3, 5);
             createInvalidGame.ShouldThrow<InvalidMultiplayerGameCreationException>();
