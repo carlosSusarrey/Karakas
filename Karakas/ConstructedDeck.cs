@@ -1,12 +1,15 @@
-﻿namespace Karakas
+﻿using System.Collections.Generic;
+
+namespace Karakas
 {
-    public class ConstructedDeck:Deck
+    public class ConstructedDeck:IDeck
     {
-        public ConstructedDeck(int cards)
+        public ConstructedDeck(ICollection<Card> cardList )
         {
-            this.Cards = cards;
+            CardList = cardList;
         }
 
-        public int Cards { get; }
+        public int CardCount => CardList.Count;
+        public ICollection<Card> CardList { get; }
     }
 }
