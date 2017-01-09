@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Karakas
@@ -6,6 +7,6 @@ namespace Karakas
     public interface IDeck:IReadOnlyCollection<Card>
     {
         IReadOnlyCollection<Card> Sideboard { get;}
-        Card Draw();
+        Tuple<Card,IDeck> Draw();
     }
 }

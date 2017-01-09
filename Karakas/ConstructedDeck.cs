@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Karakas
 {
@@ -11,13 +13,14 @@ namespace Karakas
             Sideboard = sideboard;
         }
 
+
         public int Count => CardList.Count;
         private readonly ICollection<Card> CardList;
         public IReadOnlyCollection<Card> Sideboard { get; }
 
-        public Card Draw()
+        public Tuple<Card, IDeck> Draw()
         {
-            return new Card("drawn card");
+            return Tuple.Create<Card,IDeck>(this.First(), new ConstructedDeck(this.Skip(1).ToList(),Sideboard));
         }
 
         public IEnumerator<Card> GetEnumerator()
