@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using Functional.Option;
 using Xunit;
 using Karakas;
 
@@ -26,7 +27,13 @@ namespace KarakasTests
             constructeDeck.CardCount.Should().Be(arbitrary_number_of_cards);
         }
 
-
-        
+        [Fact]
+        public void A_constructed_deck_can_have_a_card_drawn()
+        {
+            int arbitrary_number_of_cards = 60;
+            IDeck deck = DeckFactory.CreateConstrutedDeck(arbitrary_number_of_cards);
+            Card myCard = deck.Draw();
+            myCard.Should().NotBeNull();
+        }
     }
 }

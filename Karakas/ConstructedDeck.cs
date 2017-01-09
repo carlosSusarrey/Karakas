@@ -11,5 +11,10 @@ namespace Karakas
 
         public int CardCount => CardList.Count;
         public ICollection<Card> CardList { get; }
+
+        public Card Draw()
+        {
+            return new Card();
+        }
     }
 }

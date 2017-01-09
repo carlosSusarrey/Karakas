@@ -7,5 +7,6 @@ namespace Karakas
     {
         int CardCount { get; }
         ICollection<Card> CardList { get; }
+        Card Draw();
     }
 }
