@@ -3,10 +3,9 @@ using System.Collections.Generic;
 
 namespace Karakas
 {
-    public interface IDeck
+    public interface IDeck:IReadOnlyCollection<Card>
     {
-        int CardCount { get; }
-        ICollection<Card> CardList { get; }
+        IReadOnlyCollection<Card> Sideboard { get;}
         Card Draw();
     }
 }

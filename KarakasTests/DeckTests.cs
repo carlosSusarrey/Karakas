@@ -16,7 +16,7 @@ namespace KarakasTests
         public void A_constructed_deck_has_at_least_60_cards()
         {
             IDeck construtedDeck = DeckFactory.CreateConstrutedDeck();
-            construtedDeck.CardCount.Should().BeGreaterThan(59);
+            construtedDeck.Count.Should().BeGreaterThan(59);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace KarakasTests
         {
             int arbitrary_number_of_cards = 80;
             IDeck constructeDeck = DeckFactory.CreateConstrutedDeck(arbitrary_number_of_cards);
-            constructeDeck.CardCount.Should().Be(arbitrary_number_of_cards);
+            constructeDeck.Count.Should().Be(arbitrary_number_of_cards);
         }
 
         [Fact]
@@ -35,6 +35,12 @@ namespace KarakasTests
             Card myCard = deck.Draw();
             myCard.Should().NotBeNull();
         }
-        
+
+        [Fact]
+        public void A_constructed_deck_has_a_sideboard()
+        {
+            IDeck constructeDeck = DeckFactory.CreateConstrutedDeck();
+            constructeDeck.Sideboard.Should().NotBeNull();
+        }
     }
 }

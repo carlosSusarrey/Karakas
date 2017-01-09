@@ -17,9 +17,17 @@ namespace Karakas
             numberOfCards = numberOfCards > 60 ? numberOfCards : 60;
             for (var i = 0; i < numberOfCards; i++)
             {
-                cardList.Add(new Card());
+                cardList.Add(new Card("main deck card"));
             }
-            return new ConstructedDeck(cardList);
+
+            var sideboard = new List<Card>();
+
+            for (var i = 0; i < numberOfCards; i++)
+            {
+                sideboard.Add(new Card("sideboard card"));
+            }
+
+            return new ConstructedDeck(cardList, sideboard);
         }
     }
 }
