@@ -28,12 +28,13 @@ namespace KarakasTests
         }
 
         [Fact]
-        public void A_constructed_deck_can_have_a_card_drawn()
+        public void A_deck_can_have_a_card_drawn()
         {
             int arbitrary_number_of_cards = 60;
             IDeck deck = DeckFactory.CreateConstrutedDeck(arbitrary_number_of_cards);
             Card myCard = deck.Draw();
             myCard.Should().NotBeNull();
         }
+        
     }
 }
