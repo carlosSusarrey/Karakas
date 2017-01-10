@@ -27,7 +27,7 @@ namespace Karakas
                 sideboard.Add(new Card("sideboard card"));
             }
 
-            return new ConstructedDeck(cardList, sideboard);
+            return new Deck(cardList, sideboard);
         }
     }
 }

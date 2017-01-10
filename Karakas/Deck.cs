@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Karakas
 {
-    public class ConstructedDeck:IDeck
+    public class Deck:IDeck
     {
-        public ConstructedDeck(ICollection<Card> cardList, IReadOnlyCollection<Card> sideboard)
+        public Deck(ICollection<Card> cardList, IReadOnlyCollection<Card> sideboard)
         {
             CardList = cardList;
             Sideboard = sideboard;
@@ -20,7 +20,7 @@ namespace Karakas
 
         public Tuple<Card, IDeck> Draw()
         {
-            return Tuple.Create<Card,IDeck>(this.First(), new ConstructedDeck(this.Skip(1).ToList(),Sideboard));
+            return Tuple.Create<Card,IDeck>(this.First(), new Deck(this.Skip(1).ToList(),Sideboard));
         }
 
         public IEnumerator<Card> GetEnumerator()
