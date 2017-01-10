@@ -52,5 +52,11 @@ namespace KarakasTests
             constructeDeck.Sideboard.Should().NotBeNull();
         }
 
+        [Fact]
+        public void A_construted_deck_sideboard_has_at_most_15_cards()
+        {
+            IDeck constructeDeck = DeckFactory.CreateConstrutedDeck();
+            constructeDeck.Sideboard.Count.Should().BeLessThan(16);
+        }
     }
 }

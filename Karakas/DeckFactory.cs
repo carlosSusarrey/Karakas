@@ -22,7 +22,7 @@ namespace Karakas
 
             var sideboard = new List<Card>();
 
-            for (var i = 0; i < numberOfCards; i++)
+            for (var i = 0; i < 15; i++)
             {
                 sideboard.Add(new Card("sideboard card"));
             }
