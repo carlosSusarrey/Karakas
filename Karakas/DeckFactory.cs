@@ -1,14 +1,16 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Karakas
 {
-    public class DeckFactory
+    public static class DeckFactory
     {
         public static IDeck CreateConstrutedDeck()
         {
-            return CreateConstrutedDeck(60);
+            const int minimumCardsInConstructedDeck = 60;
+            return CreateConstrutedDeck(minimumCardsInConstructedDeck);
         }
 
         public static IDeck CreateConstrutedDeck(int numberOfCards)

@@ -2,11 +2,11 @@
 {
     public class Card
     {
-        private string name;
+        public string Name;
 
         public Card(string cardName)
         {
-            this.name = cardName;
+            this.Name = cardName;
         }
     }
 }

@@ -7,6 +7,7 @@ using FluentAssertions;
 using Functional.Option;
 using Xunit;
 using Karakas;
+using Newtonsoft.Json;
 
 namespace KarakasTests
 {
@@ -57,6 +58,17 @@ namespace KarakasTests
         {
             IDeck constructeDeck = DeckFactory.CreateConstrutedDeck();
             constructeDeck.Sideboard.Count.Should().BeLessThan(16);
+        }
+
+        [Fact]
+        public void Test_Json_deserializer()
+        {
+            var arbitraryCardName = "arbitrary card name";
+            var newCard = new Card(arbitraryCardName);
+            var output = JsonConvert.SerializeObject(newCard);
+            Card m = JsonConvert.DeserializeObject<Card>(output);
+            string name = m.Name;
+            name.Should().Be(arbitraryCardName);
         }
     }
 }
