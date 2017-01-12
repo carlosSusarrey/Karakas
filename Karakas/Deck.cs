@@ -9,14 +9,15 @@ namespace Karakas
     {
         public Deck(ICollection<Card> cardList, IReadOnlyCollection<Card> sideboard)
         {
-            CardList = cardList;
             Sideboard = sideboard;
+            CardList = cardList;   
         }
 
 
         public int Count => CardList.Count;
-        private readonly ICollection<Card> CardList;
         public IReadOnlyCollection<Card> Sideboard { get; }
+        private readonly ICollection<Card> CardList;
+        
 
         public Tuple<Card, IDeck> Draw()
         {
