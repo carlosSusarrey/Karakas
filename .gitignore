@@ -53,3 +53,5 @@ Temporary Items
 /Karakas/.vs/Karakas/v14
 /KarakasTests/obj/Debug
 *.ncrunchproject
+/KarakasTests/bin/Debug
+/Karakas/bin/Debug

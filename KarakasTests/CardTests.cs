@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Karakas
+using FluentAssertions;
+using Xunit;
+using Karakas;
+namespace KarakasTests
 {
-    public class Class1
+    class CardTests
     {
     }
 }
